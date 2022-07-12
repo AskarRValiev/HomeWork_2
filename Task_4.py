@@ -3,19 +3,19 @@
 # Можете использовать xor, биты, библиотеку time (миллисекунды или наносекунды) - для задания случайности
 
 import time
-rang = input('Введите диапазон случайного числа от 0 до 99: ')
-if rang.isdigit() == False or int(rang) > 99:
+rang = input('Введите диапазон случайного числа от 1 до 99: ')
+if rang.isdigit() == False or int(rang) > 99 or int(rang) == 0:
     print('Введенные данные не соответствуют условиям')
     exit()
 
 sec = str(time.time())
 result = 0
 if int(rang) <= 9:
-    result = int(sec[13])
+    result = int(sec[15])
 elif int(rang) <= 99 and int(sec[16]) >= 5:
     result = int(sec[12:14])
 else:
-    result = int(sec[13])
+    result = int(sec[15])
 
 while result > int(rang):
     result = result - int(rang)
